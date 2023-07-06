@@ -1,0 +1,51 @@
+:root {
+    --color: #243746;
+    --color-primary: #0172c9;
+    --color-secondary: #0e2233;
+    --bg: #f3f5f4;
+    --bg-secondary: #fff;
+    --border-color: #ddd;
+}
+
+.dark-mode {
+    --color: #ebf4f1;
+    --color-primary: #2ccb89;
+    --color-secondary: #fdf9f3;
+    --bg: #091a28;
+    --bg-secondary: #071521;
+    --border-color: #0d2538;
+}
+
+.sepia-mode {
+    --color: #433422;
+    --color-secondary: #504231;
+    --bg: #f1e7d0;
+    --bg-secondary: #eae0c9;
+    --border-color: #ded0bf;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg);
+    color: var(--color);
+    transition: background-color 0.3s;
+}
+
+
+.dark-mode .logo {
+    -webkit-filter: invert(100%);
+    filter: invert(70%) sepia(44%) saturate(1237%) hue-rotate(88deg) brightness(250%) contrast(300%);
+}
+
+.logo {
+    opacity: 0.5;
+}
+
+.dark-mode .card {
+    border-color: var(--color-primary) !important;
+}
+
+a {
+    color: var(--color-primary);
+}
