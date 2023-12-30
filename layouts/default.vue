@@ -4,6 +4,11 @@
       <Header />
     </div>
     <Nuxt />
+
+
+    <div>
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -20,9 +25,19 @@
   box-sizing: border-box;
 } */
 
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
 p {
   margin-bottom: 0 !important;
 }
+
 *,
 *::before,
 *::after {
@@ -62,25 +77,37 @@ p {
 .content {
   margin-left: 15rem !important;
   margin-right: 15rem !important;
+  flex-grow: 1;
+
 }
+
 @media (max-width: 1400px) {
   .content {
     margin-left: 10rem !important;
     margin-right: 10rem !important;
+    flex-grow: 1;
+
   }
 }
+
 @media (max-width: 1100px) {
   .content {
     margin-left: 7rem !important;
     margin-right: 7rem !important;
+    flex-grow: 1;
+
   }
 }
+
 @media (max-width: 700px) {
   .content {
     margin-left: 1rem !important;
     margin-right: 1rem !important;
+    flex-grow: 1;
+
   }
 }
+
 .rounded {
   border-radius: 1rem !important;
 }

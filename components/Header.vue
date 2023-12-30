@@ -1,10 +1,6 @@
 <template>
   <div>
-    <b-navbar
-      :type="$colorMode.preference"
-      :variant="$colorMode.preference"
-      class="border-bottom text-center"
-    >
+    <b-navbar :type="$colorMode.preference" :variant="$colorMode.preference" class="border-bottom text-center">
       <b-navbar-brand to="/" class="p-1">
         <b-img src="~/static/beatcoin.svg" class="mainlogo" />
       </b-navbar-brand>
@@ -16,29 +12,19 @@
       </b-nav-text>
       <b-navbar-nav class="ml-auto">
         <b-nav-form v-on:submit.prevent="">
-          <b-form-input
-            placeholder="Search"
-            class="mr-3 rounded"
-            :value="search"
-            @keyup.enter="
-              $router.push({
-                path: '/articles/page/1',
-                query: $event.target.value
-                  ? { search: $event.target.value }
-                  : {},
-              })
-            "
-          ></b-form-input>
+          <b-form-input placeholder="Search" class="mr-3 rounded" :value="search" @keyup.enter="
+            $router.push({
+              path: '/articles/page/1',
+              query: $event.target.value
+                ? { search: $event.target.value }
+                : {},
+            })
+            "></b-form-input>
         </b-nav-form>
         <!-- <b-nav-text @click="toggleColor()">
           {{ $colorMode.preference === "dark" ? "day" : "night" }}
         </b-nav-text> -->
-        <img
-          @click="toggleColor()"
-          src="~/static/day-and-night.svg"
-          width="30px"
-          class="logo mt-1"
-        />
+        <img @click="toggleColor()" src="~/static/day-and-night.svg" width="30px" class="logo mt-1" />
       </b-navbar-nav>
     </b-navbar>
   </div>
@@ -53,7 +39,6 @@ export default {
       symbol: "BTCUSDT",
       search: "",
       rate: "",
-      colors: ["system", "light", "dark", "sepia"],
     };
   },
   computed: {
@@ -75,8 +60,8 @@ export default {
         this.$nuxt.$colorMode.preference === "dark"
           ? "light"
           : this.$nuxt.$colorMode.preference === "light"
-          ? "sepia"
-          : "dark";
+            ? "sepia"
+            : "dark";
     },
     async getRate() {
       let response = await this.$axios
@@ -95,38 +80,47 @@ export default {
 .mainlogo {
   width: 30px;
 }
+
 @media (max-width: 700px) {
   .mainlogo {
     width: 40px;
   }
 }
+
 .small {
   font-size: 0.8rem;
   letter-spacing: 1px;
   margin-bottom: 2px;
 }
+
 .rate {
   font-size: 1.5em;
   font-family: "Montserrat";
   letter-spacing: 2px;
 }
+
 .bg-dark {
   background-color: #001021 !important;
 }
+
 .bg-sepia {
   background-color: var(--bg-secondary);
 }
+
 .border-bottom {
   border-bottom: 1px solid #58ce8757 !important;
 }
+
 .navbar-brand {
   font-size: 0.5rem !important;
 }
+
 .form-control {
   border-style: solid !important;
   border-color: var(--color-primary) !important;
   background-color: var(--bg) !important;
 }
+
 input {
   background-color: none !important;
 }
